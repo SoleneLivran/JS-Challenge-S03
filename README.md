@@ -1,7 +1,7 @@
 ## Quelques conseils avant de démarrer :
 
 La difficulté est subjective. Lisez bien l'énoncé et regardez bien le résultat attendus. **Prenez connaissance des Div à utiliser (ID et Classes)**, celles-ci sont mentionnés pour chaque Question dans le fichier app.js.
-En dehors de l'utilisation du DOM, **il n'est pas nécessaire de modifier le fichier HTML**. Pas besoin **non plus** de créer un fichier CSS.
+En dehors de l'utilisation du DOM, **il n'est pas nécessaire de modifier le fichier HTML**. En cas de difficulté, vous pouvez regarder la réponse proposé dans le fichier solution.js. Pas besoin **non plus** de créer un fichier CSS.
 Il y a plus d'une solution possible, si votre solution fonctionne... elle fonctionne!
 Et surtout, amusez-vous!
 
@@ -45,6 +45,8 @@ Il est possible d'utiliser une propriété sur la balise _input_ appelé **onipu
 
 **Enoncé :** Par défault, le sous menu (**_id="submenu-challenge"_**) est caché (**_class="hidden"_**). Supprimer ou remplacer cette classe par la classe **flex** (class="flex") lorsque l'utilisateur clique sur Menu (**_id="menu-challenge"_**). **Attention de ne pas supprimer les autres classes** présente dans le sous-menu, au risque de changer le design.
 
+En bonus de cette question, changez la class de **_id="chevron-menu"_** : Ancienne class "fa-chevron-up", nouvelle class "fa-chevron-down"
+
 <details>
   <summary>INDICES</summary>
 
@@ -69,7 +71,14 @@ Il existe d'ailleurs d'autres méthodes interessantes: .classList.remove('nomDeL
 
 > Créer un bouton animé, type [Switch](https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/).
 
-**Enoncé:** Lorsque l'utilisateur clique sur le boutton "Switch" (**id="_btn-circle_"**), la couleur de fond du boutton change en vert (**_let green = "#68d391";_**) et le contenu (**_id="btn-circle-inside"_**) change de place. Par chance, une classe existe déjà afin de déplacer le rond vers la droite! Il _suffit juste_ de rajouter la class "justify-end" à notre btn-circle-inside.
+**Enoncé:** Lorsque l'utilisateur clique sur le boutton "Switch" (**id="_btn-circle_"**), la couleur de fond du boutton change en vert (**_let green = "#68d391";_**) et le contenu (**_id="btn-circle-inside"_**) change de place. Par chance, une classe existe déjà afin de déplacer le rond vers la droite! Il _suffit juste_ de **rajouter la class "justify-end" à notre btn-circle-inside**.
+
+<details>
+  <summary>INDICES</summary>
+
+Voir Indice de la Question 2
+
+</details>
 
 ### Difficulté ⭐⭐
 
@@ -81,9 +90,30 @@ Il existe d'ailleurs d'autres méthodes interessantes: .classList.remove('nomDeL
 
 > Dans une liste de choix disponible, l'utilisateur peux séléctionner / déséléctionner plusieurs cases.
 
-**Enoncé:** Attention, celui est plus difficile! Pour des raisons obscurs, le webdesigner a fait le choix de ne pas utiliser un input type checkbox. L'utilisateur doit avoir la possibilité de séléctionner un ou plusieurs choix (**_ class="choice"_**) dans le conteneur (**_class="choices_**). Les éléments doivent changer de background color et les bordures doivent êtres supprimés!
+**Enoncé:** Attention, celui-ci est plus difficile! Pour des raisons obscurs, le webdesigner a fait le choix de ne pas utiliser un input type checkbox. L'utilisateur doit avoir la possibilité de séléctionner un ou plusieurs choix (**_ class="choice"_**) dans le conteneur (**_class="choices_**). Les éléments doivent changer de background color et les bordures doivent êtres supprimés!
 
 **Par chance, il existe déjà deux classes existantes à rajouter pour nous faciliter le travail!** Pour le background rajouter la classe : "bg-purple-500" color et pour la bordure, supprimer la classe "border-2".
+
+Il existe plusieurs façon de résoudre ce problème, dont 2 sont particuliérements intéressantes :
+
+- Vous pouvez ajouter un addEventListner pour chaque element : id="choix1" id="choix2" id="choix3" ...
+- Vous pouvez récupérer tous les elements (class="choice") dans une Array et utiliser une loop. Mais attention, cela nécessite l'utilisation de l'opérateur [**_this_**](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_this)
+
+<details>
+  <summary>INDICES</summary>
+
+N'oubliez pas
+
+- la loop [for each](https://www.w3schools.com/jsref/jsref_foreach.asp)!
+- Si vous souhaitez utiliser une Loop, n'oubliez pas de récupérer la longueur de votre Array
+
+```javascript
+
+for (i = 0; i < votreArray.length; i++)
+
+```
+
+</details>
 
 ### Difficulté ⭐⭐⭐⭐
 
@@ -96,6 +126,19 @@ Il existe d'ailleurs d'autres méthodes interessantes: .classList.remove('nomDeL
 > L'utilisateur peux passer le site en [Dark mode](http://www.leparisien.fr/guide-shopping/le-dark-mode-la-nouvelle-tendance-des-sites-systemes-et-applications-28-10-2019-8181882.php) en appuyant sur le bouton.
 
 **Enoncé:** L'utilisateur est sensible de la rétine. Aidons ses yeux à ne pas fondre sous le #FFFoleil! En appuyant sur le bouton (**_id="night-mode"_**), le site (_body_) doit passer en couleur foncé et le texte en blanc. Deux classes existes pour nous faciliter la tâche! bg-gray-900 & text-white. Il faut les rajouter à la balise _body_ sans modifier le reste des classes déjà en place!
+
+<details>
+  <summary>INDICES</summary>
+
+Il est possible de séléctionner le Body avec le DOM en utilisant :
+
+```javascript
+document.body;
+```
+
+[Voir documentation](https://developer.mozilla.org/fr/docs/Web/API/Document/body)
+
+</details>
 
 ### Difficulté ⭐⭐
 
@@ -116,7 +159,5 @@ Mais ici c'est du JS sacre bleu! Alors on va controler notre < audio > en passan
 **La deuxième étape**, c'est de déclencher la musique lorsque l'utilisateur appuie sur le bouton Play. Pour ça, il est possible d'utiliser une méthode **.play()** ( [Voir Documentation](https://www.w3schools.com/jsref/dom_obj_audio.asp) ). Mais avant de pouvoir jouer de la musique, n'oubliez pas de définir **quel** fichier audio votre lecteur doit jouer (la source de votre fichier), en utilisant la méthode **.src("lienversvotremusique.mp3")**
 
 **La troisième étape** est de permettre à l'utilisateur de mettre sa musique sur pause! Tout comme l'étape précédente, il existe une méthode **.pause()** pour mettre notre musique en pause.
-
-https://codepen.io/icesofty/pen/KKdGxVo
 
 ### Difficulté ⭐⭐⭐⭐

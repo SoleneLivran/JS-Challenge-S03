@@ -5,7 +5,6 @@ const green = "#68d391";
 /* START : btn-circle-demo */
 const btnCircle = document.getElementById("btn-circle-demo");
 clickedbtnCircle = false;
-
 const btnCircleInside = document.getElementById("btn-circle-inside-demo");
 
 btnCircle.addEventListener("click", () => {
@@ -21,7 +20,6 @@ btnCircle.addEventListener("click", () => {
 /* END : btn-circle-demo */
 
 /* START : input-uppercase-demo */
-
 let inputUppercaseText = document.getElementById("input-uppercase-text-demo");
 
 function getInputDemo() {
