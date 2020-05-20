@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <title>JS Challenge</title>
+  </head>
+  <body class="overflow-hidden">
+    <audio id="audio" class="hidden"></audio>
+    <h1 class="text-center text-4xl font-bold">Hello, World.</h1>
+    <h2 class="text-center">Welcome to the JS Challenge</h2>
+    <p></p>
+    <div class="wrapper flex justify-evenly w-screen">
+      <!-- --------------------------------------------------------
+
+        ////////////////////////////////////////////////////////
+                    PARTIE DEDIEE AUX QUESTIONS 
+        ////////////////////////////////////////////////////////
+
+        ---------------------------------------------------------->
+
+      <div class="questions flex flex-col justify-evenly items-center">
+        <!-- --------------------------------------------------------
+                        QUESTION 1 - Normal
+                   Start: Text Uppercase Challenge
+        ---------------------------------------------------------->
+        <div class="inputChallengeWrapper m-10">
+          <input
+            id="input-uppercase"
+            type="text"
+            value=""
+            placeholder="Your Text Here"
+            class="shadow-inner h-8 w-64 bg-gray-200 rounded-lg text-center text-purple-500 focus:outline-none"
+            oninput=""
+          />
+          <p
+            id="input-uppercase-text"
+            class="text-purple-500 font-bold text-xl text-center"
+          ></p>
+        </div>
+
+        <!-- --------------------------------------------------------
+                   End: Text Uppercase Challenge
+        ---------------------------------------------------------->
+
+        <!-- --------------------------------------------------------
+                            QUESTION 2
+                     START: Menu Challenge
+        ---------------------------------------------------------->
+
+        <div class="MenuWrapper m-10">
+          <button
+            id="menu-challenge"
+            class="menu flex w-64 h-16 justify-evenly text-gray-800 text-2xl items-center bg-gray-200 focus:outline-none"
+          >
+            MENU
+            <i id="chevron-menu" class="fas fa-chevron-up"></i>
+          </button>
+          <div
+            id="submenu-challenge"
+            class="submenu hidden w-64 justify-evenly text-gray-800 text-xl items-center bg-gray-300 focus:outline-none"
+          >
+            <ul class="m-6">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- --------------------------------------------------------
+                  END: Menu Challenge
+        ---------------------------------------------------------->
+
+        <!-- --------------------------------------------------------
+                  Start : Challenge Button Circle
+        ---------------------------------------------------------->
+        <button
+          id="btn-circle"
+          class="bg-gray-200 self-center m-10 w-16 h-8 rounded-full flex items-center shadow-inner transition duration-500 ease-in-out focus:outline-none"
+        >
+          <div
+            id="btn-circle-inside"
+            class="circle bg-white w-6 ml-1 mr-1 h-6 rounded-full shadow-md"
+          ></div>
+        </button>
+        <!-- --------------------------------------------------------
+                  End : Challenge Button Circle
+        ---------------------------------------------------------->
+
+        <!-- --------------------------------------------------------
+                            QUESTION 2 - Difficile
+                         
+                            START : Choice
+        ---------------------------------------------------------->
+
+        <div class="ChoiceCHallenge self-center m-10 flex flex-col">
+          <div class="choices flex items-center">
+            <div
+              id="choix1"
+              class="choice h-4 w-4 rounded-full border-2 border-gray-500"
+            ></div>
+            <p class="ml-2 mr-6">Choix 1</p>
+            <div
+              id="choix2"
+              class="choice h-4 w-4 rounded-full border-2 border-gray-500"
+            ></div>
+            <p class="ml-2 mr-6">Choix 2</p>
+
+            <div
+              id="choix3"
+              class="choice h-4 w-4 rounded-full border-2 border-gray-500"
+            ></div>
+            <p class="ml-2 mr-6">Choix 3</p>
+
+            <div
+              id="choix4"
+              class="choice h-4 w-4 rounded-full border-2 border-gray-500"
+            ></div>
+            <p class="ml-2 mr-6">Choix 4</p>
+          </div>
+        </div>
+
+        <!-- --------------------------------------------------------
+                  END : Choice
+        ---------------------------------------------------------->
+
+        <!-- --------------------------------------------------------
+                  START: Mode Nuit
+        ---------------------------------------------------------->
+        <button id="night-mode" class="focus:outline-none">
+          <i
+            class="text-gray-800 p-4 fas fa-moon fa-4x transition transform ease-in-out duration-300 rounded-lg hover:text-gray-900 hover:shadow-inner hover:bg-gray-200"
+          ></i>
+        </button>
+        <!-- --------------------------------------------------------
+                  END: Mode Nuit
+        ---------------------------------------------------------->
+
+        <!-- --------------------------------------------------------
+                  START: Audio Player
+        ---------------------------------------------------------->
+        <button
+          id="play-button"
+          class="text-purple-200 bg-purple-400 mr-8 ml-8 w-16 h-16 flex bg-white flex-col float-left rounded-t-full rounded-b-full m-10 p-2 shadow-md justify-center items-center focus:outline-none hover:shadow-inner hover:bg-purple-600"
+        >
+          <i id="play" class="fas fa-play fa-lg"></i>
+        </button>
+        <!-- --------------------------------------------------------
+                  END: Audio Player
+        ---------------------------------------------------------->
+      </div>
+
+      <!-- -----------------------------------------------------
+        
+        ////////////////////////////////////////////////////////
+                    PARTIE DEDIEE AUX REPONSES 
+        ////////////////////////////////////////////////////////
+        
+        ---------------------------------------------------------->
+
+      <div class="answer flex flex-col justify-evenly items-center">
+        <!-- Start: Text Uppercase Challenge -->
+        <div class="inputChallengeWrapper m-10">
+          <input
+            id="input-uppercase-demo"
+            type="text"
+            value=""
+            placeholder="Your Text Here"
+            class="shadow-inner h-8 w-64 bg-gray-200 rounded-lg text-center text-purple-500 focus:outline-none"
+            oninput="getInputDemo()"
+          />
+          <p
+            id="input-uppercase-text-demo"
+            class="text-purple-500 font-bold text-xl text-center"
+          ></p>
+        </div>
+        <!-- End: Text Uppercase Challenge -->
+
+        <!-- START: Menu Challenge -->
+
+        <div class="MenuWrapper m-10">
+          <button
+            id="menu-challenge-demo"
+            class="menu-demo flex w-64 h-16 justify-evenly text-gray-800 text-2xl items-center bg-gray-200 focus:outline-none"
+          >
+            MENU
+            <i id="chevron-menu-demo" class="fas fa-chevron-up"></i>
+          </button>
+          <div
+            id="submenu-challenge-demo"
+            class="submenu-demo hidden w-64 justify-evenly text-gray-800 text-xl items-center bg-gray-300 focus:outline-none"
+          >
+            <ul class="m-6">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- END: Menu Challenge -->
+
+        <!-- Start : Challenge Button Circle -->
+        <button
+          id="btn-circle-demo"
+          class="bg-gray-200 self-center m-10 w-16 h-8 rounded-full flex items-center shadow-inner transition duration-500 ease-in-out focus:outline-none"
+        >
+          <div
+            id="btn-circle-inside-demo"
+            class="circle bg-white w-6 ml-1 mr-1 h-6 rounded-full shadow-md"
+          ></div>
+        </button>
+        <!-- End : Challenge Button Circle -->
+
+        <!-- START : Choice -->
+        <div class="ChoiceCHallenge self-center m-10 flex flex-col">
+          <div class="choices flex items-center">
+            <div
+              id="choix1"
+              class="choice-demo h-4 w-4 rounded-full border-2 border-gray-500 transition duration-300 ease-in-out"
+            ></div>
+            <p class="ml-2 mr-6">Choix 1</p>
+            <div
+              id="choix2"
+              class="choice-demo h-4 w-4 rounded-full border-2 border-gray-500 transition duration-300 ease-in-out"
+            ></div>
+            <p class="ml-2 mr-6">Choix 2</p>
+
+            <div
+              id="choix3"
+              class="choice-demo h-4 w-4 rounded-full border-2 border-gray-500 transition duration-300 ease-in-out"
+            ></div>
+            <p class="ml-2 mr-6">Choix 3</p>
+
+            <div
+              id="choix4"
+              class="choice-demo h-4 w-4 rounded-full border-2 border-gray-500 transition duration-300 ease-in-out"
+            ></div>
+            <p class="ml-2 mr-6">Choix 4</p>
+          </div>
+        </div>
+
+        <!-- END : Choice -->
+
+        <!-- START: Mode Nuit-->
+
+        <button id="night-mode-demo" class="focus:outline-none">
+          <i
+            class="text-gray-800 p-4 fas fa-moon fa-4x transition transform ease-in-out duration-300 rounded-lg hover:text-gray-900 hover:shadow-inner hover:bg-gray-200"
+          ></i>
+        </button>
+        <!-- END: Mode Nuit-->
+
+        <!-- START: Audio Player -->
+
+        <button
+          id="play-button-demo"
+          class="text-purple-200 bg-purple-400 mr-8 ml-8 w-16 h-16 flex bg-white flex-col float-left rounded-t-full rounded-b-full m-10 p-2 shadow-md justify-center items-center focus:outline-none hover:shadow-inner hover:bg-purple-600"
+        >
+          <i id="play-demo" class="fas fa-play fa-lg"></i>
+        </button>
+        <!-- END: Audio Player -->
+      </div>
+    </div>
+    <script src="js/solution.js"></script>
+  </body>
+</html>
