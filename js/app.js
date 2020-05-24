@@ -6,6 +6,17 @@ valeur de l'input  : id="input-uppercase"
 répliquer sa valeur dans la balise <p> : id="input-uppercase-text"
 
 */
+// debugger;
+let inputDisplay = document.getElementById("input-uppercase-text");
+  console.log(inputDisplay);
+
+function showUppercaseInput() {
+  let userInput = document.getElementById("input-uppercase").value;
+  inputDisplay.innerHTML = userInput.toUpperCase();
+  // console.log(userInput);
+}
+
+
 
 /* 
 
